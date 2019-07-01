@@ -7,8 +7,11 @@
     "prettier": "prettier --write \"./{src,client/src}/**/*.{js,scss}\"",
     "lint": "eslint --fix \"./{src,client/src}/**/*.js\"",
     "start": "node src/index",
-    "test": "cross-env NODE_ENV=test mocha --recursive",  
-    "test:coverage": "nyc --reporter=html --reporter=text npm run test"
+    "test": "cross-env NODE_ENV=test mocha --recursive",
+    "test:coverage": "nyc --reporter=html --reporter=text npm run test",
+    "prettier:check": "npm run prettier -- -l",  
+    "prettier:write": "npm run prettier -- --write",  
+    "lint:fix": "npm run lint -- --fix"
   },
   "repository": {
     "type": "git",
@@ -23,13 +26,13 @@
   "bugs": {
     "url": "https://github.com/Clediano/my-money/issues"
   },
-  "nyc": {  
-    "exclude": [  
-      "config",  
-      "src/models/index.js",  
-      "test/**"  
-    ]  
-   },
+  "nyc": {
+    "exclude": [
+      "config",
+      "src/models/index.js",
+      "test/**"
+    ]
+  },
   "homepage": "https://github.com/Clediano/my-money#readme",
   "devDependencies": {
     "chai": "^4.2.0",
@@ -45,6 +48,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "forest-express-sequelize": "^3.2.3",
     "pg": "^7.11.0",
     "sequelize": "^5.9.0"
   }
