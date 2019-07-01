@@ -1,0 +1,51 @@
+{
+  "name": "my-money",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "prettier --write \"./{src,client/src}/**/*.{js,scss}\"",
+    "lint": "eslint --fix \"./{src,client/src}/**/*.js\"",
+    "start": "node src/index",
+    "test": "cross-env NODE_ENV=test mocha --recursive",  
+    "test:coverage": "nyc --reporter=html --reporter=text npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Clediano/my-money.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "9.x.x"
+  },
+  "bugs": {
+    "url": "https://github.com/Clediano/my-money/issues"
+  },
+  "nyc": {  
+    "exclude": [  
+      "config",  
+      "src/models/index.js",  
+      "test/**"  
+    ]  
+   },
+  "homepage": "https://github.com/Clediano/my-money#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-node": "^9.1.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "prettier": "^1.18.2",
+    "sequelize-cli": "^5.5.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^7.11.0",
+    "sequelize": "^5.9.0"
+  }
+}
