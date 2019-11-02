@@ -50,6 +50,6 @@
     "express": "^4.17.1",
     "forest-express-sequelize": "^3.2.3",
     "pg": "^7.11.0",
-    "sequelize": "^5.9.0"
+    "sequelize": "^5.15.1"
   }
 }
